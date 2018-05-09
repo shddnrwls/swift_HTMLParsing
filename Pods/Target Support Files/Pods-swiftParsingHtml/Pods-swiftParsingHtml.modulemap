@@ -1,0 +1,6 @@
+framework module Pods_swiftParsingHtml {
+  umbrella header "Pods-swiftParsingHtml-umbrella.h"
+
+  export *
+  module * { export * }
+}
