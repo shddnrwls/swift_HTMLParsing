@@ -25,14 +25,27 @@
                                     <action selector="parsingHtml:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nz1-GK-ZzH"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9j-3Z-rzb">
+                                <rect key="frame" x="0.0" y="239" width="375" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Py4-YI-LnK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Ap-N6-3ai"/>
+                            <constraint firstItem="N9j-3Z-rzb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="219" id="Qnh-pi-c1d"/>
                             <constraint firstItem="Py4-YI-LnK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aOX-AO-GDN"/>
+                            <constraint firstItem="N9j-3Z-rzb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eO8-Os-l3R"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="N9j-3Z-rzb" secondAttribute="trailing" id="tpe-YO-zzC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="testBtn" destination="Py4-YI-LnK" id="v0d-ad-hg2"/>
+                        <outlet property="testLbl" destination="N9j-3Z-rzb" id="KHR-uD-uO7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

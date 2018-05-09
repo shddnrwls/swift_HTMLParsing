@@ -12,7 +12,15 @@ import Alamofire
 
 
 class ViewController: UIViewController {
-
+    var array = Array<String>()
+    var stararray = Array<String>()
+    var contentarray = Array<String>()
+    
+    
+    
+    @IBOutlet var testBtn: UIButton!
+    @IBOutlet var testLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let mainURL = "https://github.com/trending"
@@ -28,14 +36,39 @@ class ViewController: UIViewController {
                     
                     if let productURL2 = productURL.at_xpath("li")
                     {
-                        if let productURL3 = productURL2.at_xpath("div")
-                        {
-                            if let trend = productURL3.text, trend.contains("/"){
-                                print(trend)
+                        
+                        for a in productURL.xpath("li"){
+                            if let star = a.at_xpath("div[@class = 'f6 text-gray mt-2']"){
+                                if let star2 = star.at_xpath("a"){
+                                    if let star3 = star2.text , star3.contains("\n"){
+                                        let star4 = star3.replacingOccurrences(of: "\n", with: "").trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                                        stararray.append(star4)
+                                    }
+                                }
+                                
+                            }
+                            if let con = a.at_xpath("div[@class = 'py-1']"){
+                                if let conn = con.at_xpath("p"){
+                                    let connn = conn.text?.replacingOccurrences(of: "\n", with: "").trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                                    contentarray.append(connn!)
+                                    print(connn)
+                                    
+                                    
+                                }
+                               
+                            }
+                            if let pr = a.at_xpath("div"){
+                                
+                                if let se = pr.text, se.contains("/"){
+                                    let tri = se.replacingOccurrences(of: "\n", with: "").trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                                    
+                                    array.append(tri)
+//                                    print(array)
+                                    
+                                }
                             }
                             
                         }
-//                        print(productURL2.content)
                     }
                 }
             }
@@ -61,6 +94,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func parsingHtml(_ sender: UIButton) {
+        print(array[1])
+        print(stararray[1])
+        print(contentarray[1])
+        testLbl.text = array[0]
+        
     }
 
 }
